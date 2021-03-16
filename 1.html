@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>开始使用layer</title>
+  <link rel="stylesheet" type="text/css" href="css/layui.css">
+</head>
+<body>
+
+  <button id="test1" class="layui-btn">点击</button>
+
+  
+  <script src="jquery-3.6.0.js"></script>
+  <script src="layui.all.js"></script>
+  <script src="layer/layer.js"></script>
+  
+  <script>
+  
+
+    $('#test1').on('click', function(){
+    layer.prompt({ formType: 2,
+      btn: ['提交', '取消', ],
+      closeBtn: 2,
+      anim: 2,
+      move: false,
+      yes: function(value) {
+/*        $.ajax({
+          url: '/addComent',
+          type: 'POST',
+          dataType: 'json',
+          success: function(res){
+            // 成功处理逻辑
+           },
+          error: function(res){
+          // 错误时处理逻辑
+          }
+        });*/
+        alert(value); //得到value
+      },
+      value: '输入评论',
+      title: '评论',
+      area: ['800px', '350px']
+    }, function(value, index, elem){
+        
+  
+    });
+  })
+  </script>
+
+</body>
+</html>
